@@ -7,7 +7,7 @@ import url from "url";
 import Header from "../components/Header";
 import Home from "../components/Home";
 import Footer from "../components/Footer";
-import Test from "../components/Test/Test";
+import TakeTest from "../components/TakeTest/TakeTest";
 import About from "../components/About";
 import Contact from "../components/Contact";
 
@@ -26,7 +26,7 @@ class AppRouter extends Component {
       <Switch className="switch-container">
         <Route path="/" component={Home} exact={true} />
         <Route path="/error" component={Error} exact={true} />
-        <Route path="/test" component={Test} exact={true} />
+        <Route path="/test" component={TakeTest} exact={true} />
         <Route path="/about" component={About} exact={true} />
         <Route path="/contact" component={Contact} exact={true} />
       </Switch>

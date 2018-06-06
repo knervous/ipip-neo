@@ -1,4 +1,5 @@
 import { TEST_INCREMENT_INDEX, TEST_DECREMENT_INDEX } from "../actions/actionTypes";
+const testData = require("./initialStates/testDataInitialState.json");
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -10,12 +11,10 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-  if (action.type === TEST_INCREMENT_INDEX) {
-  }
-  return state;
 };
 
 export const initialState = {
+  ...testData,
   index: 0,
   pageSize: 5
 };
