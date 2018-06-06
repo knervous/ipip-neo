@@ -1,0 +1,38 @@
+{
+  "ui": {
+    "coursePlayer": {
+      "title": "Quality Trainer 视频播放器"
+    },
+    "header": {
+      "player": "课程播放器",
+      "progress": "Progress Tracking",
+      "signOut": "注销",
+      "manageAccount": "管理帐户"
+    },
+    "langSelector": {
+      "selectLang": "选择语言"
+    },
+    "loadingCourseContent": "Loading Course Content..."
+  },
+  "errors": {
+    "title": {
+      "error": "Error",
+      "warning": "Warning",
+      "serverError": "Server Error"
+    },
+    "type": {
+      "unableToCompleteRequest": "The action cannot be completed.",
+      "notValidAuth": "Could not validate user.",
+      "setSlide": "Could not save session.",
+      "getSlide": "Could not retrieve session."
+    },
+    "serverInfo": "Message From Server",
+    "errorCodes": {
+      "6000": "Unknown Error",
+      "6001": "Data Storage Error"
+    },
+    "urlMessages": {
+      "login": "Please try logging in again."
+    }
+  }
+}

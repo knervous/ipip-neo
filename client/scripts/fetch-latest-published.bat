@@ -1,0 +1,1 @@
+powershell -noexit "& "".\fetch-published.ps1"""

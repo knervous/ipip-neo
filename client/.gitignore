@@ -1,0 +1,32 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# VSCode Files
+.vscode/
+
+# dependencies
+node_modules/
+
+# environment settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# production
+build/
+public/styles/
+public/en-US/
+public/es-mx/
+public/zh-chs/
+
+# testing
+coverage/
+
+# misc
+.DS_Store
+
+# npm and yarn
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
