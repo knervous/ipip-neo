@@ -13,6 +13,13 @@
       "start": "START"
     },
     "test": {
+      "scale": {
+        "inaccurate" : "Inaccurate",
+        "moderatelyInaccurate" : "Moderately Inaccurate",
+        "neither": "Neither Accurate nor Inaccurate",
+        "moderatelyAccurate" : "Moderately Accurate",
+        "accurate": "Accurate"
+      },
       "questions": {
         "1": "Worry about things.",
         "2": "Make friends easily.",

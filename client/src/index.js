@@ -10,6 +10,7 @@ import configureStore from "./store/configureStore";
 import { configureAppInsights } from "./helpers/appInsights";
 import AppRouter, { history } from "./routers/AppRouter";
 
+import "rc-slider/assets/index.css";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import "react-redux-toastr/lib/css/react-redux-toastr.min.css";

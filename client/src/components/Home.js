@@ -9,13 +9,7 @@ class Home extends Component {
       hello: ""
     };
   }
-  componentWillMount() {
-    fetch("/api/hello")
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ hello: data.message });
-      });
-  }
+
   render() {
     const { l10n } = this.props;
     return (
