@@ -1,0 +1,44 @@
+/******
+
+This stylesheet is written in BEM
+
+Block = .block
+Element = .block__element
+Modifier = .block__element--modifier  OR  .block--modifier
+
+******/
+
+/* Blocks ******************************************************************/
+
+.lang-selector-container {
+  font-size: 14px;
+}
+
+/* Elements ******************************************************************/
+
+.lang-selector-container__select-wrapper select {
+  float: right;
+  padding: 8px;
+  min-width: 180px;
+  background-color: #ddd;
+  border: 1px solid #808384;
+  border-radius: 3px;
+  background: #f1f1f1;
+  background: -moz-linear-gradient(top, #f1f1f1 0%, #e9e9e9 3%, #dddddd 45%, #dcdcdc 85%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #f1f1f1),
+    color-stop(3%, #e9e9e9),
+    color-stop(45%, #dddddd),
+    color-stop(85%, #dcdcdc)
+  );
+  background: -webkit-linear-gradient(top, #f1f1f1 0%, #e9e9e9 3%, #dddddd 45%, #dcdcdc 85%);
+  background: -o-linear-gradient(top, #f1f1f1 0%, #e9e9e9 3%, #dddddd 45%, #dcdcdc 85%);
+  background: -ms-linear-gradient(top, #f1f1f1 0%, #e9e9e9 3%, #dddddd 45%, #dcdcdc 85%);
+  background: linear-gradient(to bottom, #f1f1f1 0%, #e9e9e9 3%, #dddddd 45%, #dcdcdc 85%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1f1f1", endColorstr="#dcdcdc", GradientType=0);
+}
+
+/* Modifiers ******************************************************************/

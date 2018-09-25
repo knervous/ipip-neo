@@ -1,0 +1,16 @@
+{
+  "name": "ipip-neo-next",
+  "scripts": {
+    "build": "next build",
+    "start": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "express": "^4.16.3",
+    "next": "7.0.0",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "react": "16.5.2",
+    "react-dom": "16.5.2"
+  }
+}

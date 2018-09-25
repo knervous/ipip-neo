@@ -1,0 +1,120 @@
+/******
+
+This stylesheet is written in BEM
+
+Block = .block
+Element = .block__element
+Modifier = .block__element--modifier  OR  .block--modifier
+
+******/
+
+/* Blocks ******************************************************************/
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  height: 12vh;
+  color: #fbfbfb;
+  text-align: center;
+  background: rgb(238, 238, 238);
+  div {
+    width: 20%;
+  }
+}
+
+.header-test,
+.header-about,
+.header-contact {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2.8rem;
+  font-family: sans-serif;
+
+  &:hover {
+    filter: brightness(115%);
+    cursor: pointer;
+  }
+  &:active {
+    filter: brightness(95%);
+  }
+  div {
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+    div {
+      margin-top: -5px;
+    }
+    transition: 0.1s ease-in-out;
+  }
+}
+
+.header-brand {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+    height: 80%;
+  }
+}
+
+.header-test {
+  font-size: 2.5rem;
+  background: rgb(34, 46, 49);
+  height: 100%;
+}
+
+.header-about {
+  background: rgb(39, 33, 74);
+}
+
+.header-contact {
+  background: rgb(26, 85, 135);
+}
+
+.header-user {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+  div {
+    color: black;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-test,
+  .header-about,
+  .header-contact,
+  .header-test {
+    font-size: 2rem;
+    div {
+      size: 15;
+    }
+  }
+}
+
+/* Elements ******************************************************************/
+
+/* Modifiers ******************************************************************/
+
+/* Overrides ******************************************************************/
+
+.dropdown-toggle {
+  padding-top: 20px !important;
+}
+
+.dropdown,
+.dropdown-toggle {
+  height: 100% !important;
+}

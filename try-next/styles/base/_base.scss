@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: rgb(250, 250, 250);
+  overflow-y: hidden;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  div.desktop-frame {
+    margin: 0 auto;
+    min-height: 80%;
+    text-align: center;
+    overflow: hidden;
+    max-width: 1200px;
+  }
+
+  footer {
+    min-height: 60px;
+  }
+}
+
+// Overrides for module styling
+.redux-toastr {
+  span {
+    div.top-right {
+      width: 420px !important;
+    }
+    div.top-center {
+      width: 400px !important;
+    }
+  }
+}
