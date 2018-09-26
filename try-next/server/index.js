@@ -1,31 +1,25 @@
+const VERSION = 'v1'
+const port = process.env.PORT || 3000
+const dev = process.env.NODE_ENV !== 'production'
+
+const express = require('express')
+const next = require('next')
+const api = require('./api')
+
 /**
- * Set up the express server
+ * Initialize Next and Express, and start the server
  */
-function initExpress(app){
-    const VERSION = 'v1'
-    const port = process.env.PORT || 3000;
-    const express = require('express')
-    const server = express();
-    const defaultRequestHandler = app.getRequestHandler()
-
-    const api = require('./api')
-    server.use(`/api/${VERSION}`, api)
-    server.get('*', (req, res) => defaultRequestHandler(req, res))
-
+async function run(){    
+    const next_app = next({ dev })
+    await next_app.prepare()
+    
+    const server = express()
+    server.use(`/api/${VERSION}`, api) // Handle api calls
+    server.get('*', next_app.getRequestHandler()) // Handle Next routes
     server.listen(port, (err) => {
-        if (err) throw err;
-        console.log(`Listening on port ${port}`);
+        if (err) throw err
+        console.log(`Listening on port ${port}`)
     })
 }
 
-/**
- * Prepare the Next app, and then initialize express
- */
-function initNext(){
-    const dev = process.env.NODE_ENV !== 'production';
-    const next = require('next')
-    const app = next({ dev });    
-    app.prepare().then(() => initExpress(app))
-}
-
-initNext()
+run()

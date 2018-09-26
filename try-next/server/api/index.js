@@ -1,8 +1,12 @@
-const express = require('express');
-const app = express.Router();
+/**
+ * IPIP Neo API
+ */
 
-app.get('/hello', (req, res) => {
-    res.send({ message: 'world' });
-});
+const express = require('express')
+const api = express.Router()
 
-module.exports = app
+api.get('/hello', (req, res) => {
+    res.send({ message: 'world' })
+})
+
+module.exports = api
