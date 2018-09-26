@@ -1,5 +1,6 @@
 import 'styles/styles.scss'
 import Nav from 'components/nav'
+import * as api from 'api'
 
 /**
  * Stub for the translation function
@@ -21,8 +22,9 @@ const renderHome = () => (
         <p className="home-welcome">{l10n("ui.home.welcome")}</p>
         <p className="home-getStarted">{l10n("ui.home.getStarted")}</p>
         <div className="home-start">
-        <span>{l10n("ui.home.start")}</span>
+            <span>{l10n("ui.home.start")}</span>
         </div>
+        <button onClick={api.addTestResult}>Test Post</button>
     </div>      
 </>
 )
