@@ -1,13 +1,15 @@
 {
   "name": "ipip-neo-next",
   "scripts": {
-    "build": "next build",
-    "start": "nodemon server/index.js"
+    "build": "next build src/client",
+    "dev": "nodemon src/server/index.js",
+    "start": "npm run build && cross-env NODE_ENV=production node src/server/index.js"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "change-case": "^3.0.2",
+    "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "mongoose": "^5.2.17",
     "next": "7.0.0",

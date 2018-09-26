@@ -14,7 +14,8 @@ const api = require('./api')
  * Initialize Next and Express, start the server, and connect to the database
  */
 async function run(){    
-    const next_app = next({ dev })
+    const dir = 'src/client'
+    const next_app = next({ dir, dev })
     await next_app.prepare()
     
     const server = express()
@@ -25,7 +26,7 @@ async function run(){
         console.log(`Listening on port ${port}`)
     })
 
-    mongoose.connect(DB_URL)    
+    mongoose.connect(DB_URL, { useNewUrlParser: true })    
 }
 
 run()
