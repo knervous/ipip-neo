@@ -1,9 +1,7 @@
-@import './dropdown.scss';
-
 body {
   margin: 0px;
   background: #fafafa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
 }
 
@@ -13,17 +11,6 @@ body {
 
 *:focus {
   outline: none;
-}
-
-.mtb-focus {
-  outline: 1pt dotted #212121;
-  outline: 2pt auto lighten(#5b9dd9, 10%);
-}
-
-.mtb-select-all {
-  & * {
-    user-select: all;
-  }
 }
 
 .main-content {
