@@ -1,0 +1,39 @@
+@import './dropdown.scss';
+
+body {
+  margin: 0px;
+  background: #fafafa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.mtb-focus {
+  outline: 1pt dotted #212121;
+  outline: 2pt auto lighten(#5b9dd9, 10%);
+}
+
+.mtb-select-all {
+  & * {
+    user-select: all;
+  }
+}
+
+.main-content {
+  & > div {
+    min-height: 73vh;
+    @media (min-width: 500px) {
+      min-height: 80vh;
+    }
+  }
+
+  overflow-y: auto;
+  max-height: 88vh;
+}

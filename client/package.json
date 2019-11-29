@@ -1,62 +1,58 @@
 {
-  "name": "personalitytest-client",
-  "version": "1.0.0",
-  "description": "Client for 5 Factor Personality Test",
-  "main": "app.js",
+  "name": "mss-online",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@material-ui/core": "^1.0.0",
-    "applicationinsights-js": "^1.0.14",
-    "classnames": "^2.2.5",
-    "core-js": "^2.5.3",
-    "fscreen": "^1.0.2",
-    "js-cookie": "^2.2.0",
-    "lodash": "^4.17.4",
-    "moment": "^2.21.0",
-    "normalize.css": "^7.0.0",
+    "antd": "^3.25.3",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "form-data": "^2.5.1",
+    "html-react-parser": "^0.9.1",
+    "i18next": "^17.0.16",
+    "i18next-xhr-backend": "^3.2.0",
+    "node-sass": "^4.12.0",
     "querystring": "^0.2.0",
-    "rc-slider": "^8.6.1",
-    "react": "^16.1.1",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.1.1",
-    "react-icons-kit": "^1.0.7",
-    "react-localize-redux": "^2.13.7",
-    "react-redux": "^5.0.6",
-    "react-redux-toastr": "^7.2.1",
-    "react-router-bootstrap": "^0.24.4",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "redux": "^3.7.2",
-    "redux-observable": "^0.17.0",
-    "rxjs": "^5.5.5",
-    "url": "^0.11.0"
-  },
-  "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint-watch": "^3.1.3",
-    "mkdirp": "^0.5.1",
-    "nock": "^9.1.9",
-    "node-sass-chokidar": "0.0.3",
-    "npm-run-all": "^4.1.2",
-    "prettier": "^1.10.2",
-    "react-test-renderer": "^16.2.0",
-    "sinon": "^4.3.0",
-    "webpack": "3.11.0",
-    "xmlhttprequest": "^1.8.0"
+    "react": "^16.10.1",
+    "react-cookie": "^4.0.1",
+    "react-dom": "^16.10.1",
+    "react-fade-in": "^0.1.6",
+    "react-i18next": "^10.13.0",
+    "react-icons-kit": "^1.3.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-transition-group": "^4.3.0",
+    "react-virtualized": "^9.21.1"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o public/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o public/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p fix-moment watch-css start-js lint",
-    "lint": "esw -w src",
-    "fix-moment": "node fixMoment",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all fix-moment build-css build-js",
-    "test": "react-scripts test --env=jsdom --testPathIgnorePatterns=src/__tests__/test-helpers",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test --moduleDirectories=node_modules --modulePaths=node_modules --testPathIgnorePatterns=\"src/__tests__/.*/[^\\.]+(?!.test).js\""
   },
-  "proxy": "http://localhost:5000",
-  "author": "Paul Johnson & John Johnson",
-  "license": "ISC"
+  "jest": {
+    "collectCoverageFrom": [],
+    "coverageThreshold": {},
+    "coverageReporters": [],
+    "snapshotSerializers": []
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost",
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0",
+    "customize-cra": "^0.7.0",
+    "dom-storage": "^2.1.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "react-app-rewired": "^2.1.3"
+  }
 }
