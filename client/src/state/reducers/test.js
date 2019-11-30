@@ -1,15 +1,16 @@
-import { initialState } from '.';
+import { initialState } from ".";
 
 /**
  * Test data actions
  * @enum {string}
  */
 export const TestDataActions = {
-  SET_ANSWER    : 'SET_ANSWER',
-  SET_TEST_STATE: 'SET_TEST_STATE',
-  SET_TEST_USER : 'SET_TEST_USER',
-  RESET         : 'TEST_RESET',
-  RESTORE       : 'TEST_RESTORE'
+  SET_ANSWER: "SET_ANSWER",
+  SET_TEST_STATE: "SET_TEST_STATE",
+  SET_TEST_USER: "SET_TEST_USER",
+  RESET: "TEST_RESET",
+  RESTORE: "TEST_RESTORE",
+  SET_PAGE_QUESTIONS: "TEST_SET_PAGE_QUESTIONS"
 };
 
 export const testReducer = (state, action) => {
@@ -26,7 +27,7 @@ export const testReducer = (state, action) => {
         }
       };
       if (window.localStorage) {
-        window.localStorage.setItem('testState', JSON.stringify(newState.test));
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
       }
       return newState;
     }
@@ -39,7 +40,7 @@ export const testReducer = (state, action) => {
         }
       };
       if (window.localStorage) {
-        window.localStorage.setItem('testState', JSON.stringify(newState.test));
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
       }
       return newState;
     }
@@ -52,7 +53,7 @@ export const testReducer = (state, action) => {
         }
       };
       if (window.localStorage) {
-        window.localStorage.setItem('testState', JSON.stringify(newState.test));
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
       }
       return newState;
     }
@@ -62,7 +63,7 @@ export const testReducer = (state, action) => {
         test: initialState.test
       };
       if (window.localStorage) {
-        window.localStorage.setItem('testState', JSON.stringify(newState.test));
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
       }
       return newState;
     }
@@ -72,7 +73,24 @@ export const testReducer = (state, action) => {
         test: action.payload
       };
       if (window.localStorage) {
-        window.localStorage.setItem('testState', JSON.stringify(newState.test));
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
+      }
+      return newState;
+    }
+
+    case TestDataActions.SET_PAGE_QUESTIONS: {
+      const newState = {
+        ...state,
+        test: {
+          ...state.test,
+          settings: {
+            ...state.test.settings,
+            pageQuestions: action.payload
+          }
+        }
+      };
+      if (window.localStorage) {
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
       }
       return newState;
     }

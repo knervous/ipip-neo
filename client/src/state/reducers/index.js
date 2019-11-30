@@ -1,23 +1,26 @@
-import { testReducer } from './test';
-import { uiReducer } from './ui';
+import { testReducer } from "./test";
+import { uiReducer } from "./ui";
 
 export const initialState = {
   test: {
-    state            : 'notStarted',
+    state: "notStarted",
     questionsAnswered: {},
-    finished         : false,
-    user             : {
-      nickname: '',
-      sex     : 'male',
-      age     : 0
+    finished: false,
+    user: {
+      nickname: "",
+      sex: "male",
+      age: 0
+    },
+    settings: {
+      pageQuestions: "five"
     }
   },
   ui: {
     loading: {
       active: false,
-      type  : ''
+      type: ""
     },
-    language: 'en-US'
+    language: "en-US"
   }
 };
 

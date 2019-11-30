@@ -6,6 +6,9 @@
   padding: 0% 4%;
   font-family: serif;
   max-width: 70vw;
+  @media (min-width: 500px) {
+    padding-top: 10vh;
+  }
 }
 
 @media (max-width: 500px) {

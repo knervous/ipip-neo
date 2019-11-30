@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import QuestionContainer from './QuestionContainer';
-import TestIntro from './TestIntro';
-import './test.scss';
-import { useTranslation } from 'react-i18next';
-import { GlobalContext } from '../GlobalState/GlobalState';
-import { Modal, Button } from 'antd';
+import React, { useState, useEffect } from "react";
+import QuestionContainer from "./QuestionContainer";
+import TestIntro from "./TestIntro";
+import "./test.scss";
+import { useTranslation } from "react-i18next";
+import { GlobalContext } from "../GlobalState/GlobalState";
+import { Modal, Button } from "antd";
 
 export default () => (
   <GlobalContext.Consumer>
@@ -17,14 +17,18 @@ const TestContainer = ({
   state,
   actions: { resetTestState, restoreTestState },
   state: {
-    test: { state: testState }
+    test: {
+      state: testState,
+      settings: { pageQuestions }
+    },
+    test
   }
 }) => {
   const [index, setIndex] = useState(0);
   const [showInProgress, setShowInProgress] = useState(false);
-  const [pageSize, setPageSize] = useState(5);
-  const [t] = useTranslation('shared');
-  const scaleDegrees = ['inaccurate', 'moderatelyInaccurate', 'neither', 'moderatelyAccurate', 'accurate'].map(s =>
+  const [pageSize, setPageSize] = useState(pageQuestions === "five" ? 5 : pageQuestions === "one" ? 1 : 300);
+  const [t] = useTranslation("shared");
+  const scaleDegrees = ["inaccurate", "moderatelyInaccurate", "neither", "moderatelyAccurate", "accurate"].map(s =>
     t(`ui.test.scale.${s}`)
   );
 
@@ -32,16 +36,26 @@ const TestContainer = ({
     if (!window.localStorage) {
       return;
     }
-    const localData = localStorage.getItem('testState');
+    const localData = localStorage.getItem("testState");
     if (localData) {
       try {
         const testState = JSON.parse(localData);
-        if (testState.state === 'inProgress') {
+        if (testState.state === "inProgress") {
           setShowInProgress(true);
         }
       } catch (e) {}
     }
   }, []);
+
+  useEffect(() => {
+    const newPageSize = pageQuestions === "five" ? 5 : pageQuestions === "one" ? 1 : 300;
+    setPageSize(newPageSize);
+    const newIndex = Object.keys(test.questionsAnswered).reduce(
+      (acc, val) => (parseInt(val) % newPageSize === 0 && parseInt(val) > acc ? parseInt(val) : acc),
+      0
+    );
+    setIndex(newIndex);
+  }, [pageQuestions]); // eslint-disable-line
 
   const reset = () => {
     resetTestState();
@@ -50,7 +64,7 @@ const TestContainer = ({
 
   const restore = () => {
     setShowInProgress(false);
-    const testState = JSON.parse(localStorage.getItem('testState'));
+    const testState = JSON.parse(localStorage.getItem("testState"));
     const newIndex = Object.keys(testState.questionsAnswered).reduce(
       (acc, val) => (parseInt(val) % 5 === 0 && parseInt(val) > acc ? parseInt(val) : acc),
       0
@@ -63,25 +77,27 @@ const TestContainer = ({
     <div className="home-container">
       <Modal
         className="restore-session-modal"
-        title={t('ui.test.restoreSession')}
+        title={t("ui.test.restoreSession")}
         visible={showInProgress}
         closable={false}
         closeIcon={null}
         footer={
           <div>
-            <Button onClick={reset}>{t('ui.test.reset')}</Button>
+            <Button onClick={reset}>{t("ui.test.reset")}</Button>
             <Button type="primary" onClick={restore}>
-              {t('ui.test.restore')}
+              {t("ui.test.restore")}
             </Button>
           </div>
         }
       >
-        <p>{t('ui.test.restoreSessionDetails')}</p>
+        <p>{t("ui.test.restoreSessionDetails")}</p>
       </Modal>
-      {testState === 'notStarted' ? (
+      {testState === "notStarted" ? (
         <TestIntro actions={actions} state={state} />
       ) : (
         <QuestionContainer
+          state={state}
+          actions={actions}
           index={index}
           pageSize={pageSize}
           scaleDegrees={scaleDegrees}

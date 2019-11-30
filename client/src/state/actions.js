@@ -1,18 +1,19 @@
-import { TestDataActions } from './reducers/test';
+import { TestDataActions } from "./reducers/test";
 
-import { UiActions } from './reducers/ui';
-import { getAsyncActions } from './asyncActions';
+import { UiActions } from "./reducers/ui";
+import { getAsyncActions } from "./asyncActions";
 
 export const actionMap = {
   setAnswer: (questionNumber, scaleIndex) => ({
-    type   : TestDataActions.SET_ANSWER,
+    type: TestDataActions.SET_ANSWER,
     payload: { questionNumber, scaleIndex }
   }),
-  resetTestState  : () => ({ type: TestDataActions.RESET }),
+  setPageQuestions: mode => ({ type: TestDataActions.SET_PAGE_QUESTIONS, payload: mode }),
+  resetTestState: () => ({ type: TestDataActions.RESET }),
   restoreTestState: state => ({ type: TestDataActions.RESTORE, payload: state }),
-  setTestUser     : user => ({ type: TestDataActions.SET_TEST_USER, payload: user }),
-  setTestState    : state => ({ type: TestDataActions.SET_TEST_STATE, payload: state }),
-  setLanguage     : language => ({ type: UiActions.CHANGE_LANGUAGE, payload: language })
+  setTestUser: user => ({ type: TestDataActions.SET_TEST_USER, payload: user }),
+  setTestState: state => ({ type: TestDataActions.SET_TEST_STATE, payload: state }),
+  setLanguage: language => ({ type: UiActions.CHANGE_LANGUAGE, payload: language })
 };
 
 export const getDispatchActions = (dispatch, getState) => {

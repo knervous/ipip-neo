@@ -33,6 +33,12 @@
       }
     },
     "test": {
+      "questionDisplay": "Questions per page",
+      "oneQuestion": "One at a time",
+      "fiveQuestion": "Five at a time",
+      "allQuestion": "All at once",
+      "saveSettings": "Save settings",
+      "testSettings": "Change test settings",
       "restoreSession": "Restore Session",
       "restoreSessionDetails": "It looks like you started the IPIP NEO without finishing in a previous session. If you would like to start back where you left off, select 'Resume Session', otherwise select 'Start Over' to start at the beginning.",
       "reset": "Start Over",
