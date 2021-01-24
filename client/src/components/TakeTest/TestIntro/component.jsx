@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Checkbox, Button, Modal, Input, Tooltip, Icon, Radio, InputNumber } from 'antd';
 
-import './intro.scss';
+import './component.scss';
 
-export default ({ actions: { setTestState, setTestUser } }) => {
+export const TestIntro = ({ actions: { setTestState, setTestUser } }) => {
   const [t] = useTranslation('shared');
   const [agree, setAgree] = useState(false);
   const [nickname, setNickname] = useState('');

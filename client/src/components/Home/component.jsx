@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
-import './home.scss';
+import './component.scss';
 
-export default () => {
+export const Home = () => {
   const [t] = useTranslation('shared');
   const history = useHistory();
 

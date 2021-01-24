@@ -13,6 +13,7 @@ export const actionMap = {
   restoreTestState: state => ({ type: TestDataActions.RESTORE, payload: state }),
   setTestUser: user => ({ type: TestDataActions.SET_TEST_USER, payload: user }),
   setTestState: state => ({ type: TestDataActions.SET_TEST_STATE, payload: state }),
+  setTestFinished: finished => ({ type: TestDataActions.SET_TEST_FINISHED, payload: finished }),
   setLanguage: language => ({ type: UiActions.CHANGE_LANGUAGE, payload: language })
 };
 

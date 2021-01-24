@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default () => {
+export const About = () => {
   const [t] = useTranslation('shared');
   return <div>{t('about')}</div>;
 };

@@ -9,10 +9,10 @@ import { ic_menu } from 'react-icons-kit/md/ic_menu';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
-import './navbar.scss';
+import './component.scss';
 import { Modal } from 'antd';
 
-export default () => {
+export const NavBar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const history = useHistory();
   function navigate(path) {

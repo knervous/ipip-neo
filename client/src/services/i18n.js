@@ -18,7 +18,6 @@ export const init18n = (language = 'en') =>
       wait         : true,
       ns           : ['shared'],
       defaultNS    : 'shared',
-      // debug: true,
       interpolation: {
         escapeValue: false
       },
@@ -41,12 +40,5 @@ export function changeLanguage(language) {
   });
 }
 
-export function preloadNamespaces(namespaces) {
-  return i18n.loadNamespaces(namespaces);
-}
-
-export function getLoadedNamespaces() {
-  return i18n.options.ns;
-}
 
 export default i18n;

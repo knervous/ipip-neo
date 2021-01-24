@@ -3,6 +3,9 @@ body {
   background: #fafafa;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
+  #root {
+    height: 100vh;
+  }
 }
 
 .hidden {
@@ -14,13 +17,6 @@ body {
 }
 
 .main-content {
-  & > div {
-    min-height: 73vh;
-    @media (min-width: 500px) {
-      min-height: 80vh;
-    }
-  }
-
   overflow-y: auto;
   max-height: 88vh;
 }

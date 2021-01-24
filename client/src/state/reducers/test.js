@@ -8,6 +8,7 @@ export const TestDataActions = {
   SET_ANSWER: "SET_ANSWER",
   SET_TEST_STATE: "SET_TEST_STATE",
   SET_TEST_USER: "SET_TEST_USER",
+  SET_TEST_FINISHED: "SET_TEST_FINISHED",
   RESET: "TEST_RESET",
   RESTORE: "TEST_RESTORE",
   SET_PAGE_QUESTIONS: "TEST_SET_PAGE_QUESTIONS"
@@ -77,7 +78,6 @@ export const testReducer = (state, action) => {
       }
       return newState;
     }
-
     case TestDataActions.SET_PAGE_QUESTIONS: {
       const newState = {
         ...state,
@@ -87,6 +87,19 @@ export const testReducer = (state, action) => {
             ...state.test.settings,
             pageQuestions: action.payload
           }
+        }
+      };
+      if (window.localStorage) {
+        window.localStorage.setItem("testState", JSON.stringify(newState.test));
+      }
+      return newState;
+    }
+    case TestDataActions.SET_TEST_FINISHED: {
+      const newState = {
+        ...state,
+        test: {
+          ...state.test,
+          finished: action.payload
         }
       };
       if (window.localStorage) {

@@ -4,6 +4,7 @@ import { uiReducer } from "./ui";
 export const initialState = {
   test: {
     state: "notStarted",
+    testType: "long",
     questionsAnswered: {},
     finished: false,
     user: {

@@ -1,16 +1,18 @@
-import React, { useEffect, useState, useRef } from "react";
+import { Button, Icon, Modal, Radio } from "antd";
 import classnames from "classnames";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useRef, useState } from "react";
 import FadeIn from "react-fade-in";
-import { Spin, Icon, Modal, Button, Radio } from "antd";
+import { useTranslation } from "react-i18next";
 
-export default props => {
+import { longTestMap } from "./testMap";
+
+export const QuestionContainer = props => {
   const [t] = useTranslation("shared");
   const {
     state: {
       test: {
         questionsAnswered,
-        finished,
+        testType,
         settings: { pageQuestions }
       }
     },
@@ -21,8 +23,9 @@ export default props => {
   const [loading, setLoading] = useState(false);
   const { index, pageSize, pageNext, pagePrev, scaleDegrees } = props;
   const questionsRef = useRef(null);
+  const isLongTest = testType === "long";
   const questionBlock = Array.from(new Array(pageSize), (_, localIndex) =>
-    t(`ui.test.questions.${localIndex + index + 1}`)
+    t(`ui.test.questions.${isLongTest ? longTestMap[(localIndex + index + 1).toString()] : localIndex + index + 1}`)
   );
   useEffect(() => {
     setLoading(true);
@@ -47,7 +50,7 @@ export default props => {
       <div ref={questionsRef}>
         <Modal
           title={t("ui.test.testSettings")}
-          className="test-settings-modal"
+          className='test-settings-modal'
           onCancel={() => setShowSettings(false)}
           visible={showSettings}
           closable={true}
@@ -61,12 +64,12 @@ export default props => {
           </Radio.Group>
         </Modal>
 
-        <div className="question-header">
-          <div onClick={() => setShowSettings(true)} className="test-settings-toggle">
+        <div className='question-header'>
+          <div onClick={() => setShowSettings(true)} className='test-settings-toggle'>
             <span>{t("ui.test.testSettings")}</span>
-            <Icon theme="filled" type="setting" />
+            <Icon theme='filled' type='setting' />
           </div>
-          <p className="question-description">{t("ui.test.describe")}</p>
+          <p className='question-description'>{t("ui.test.describe")}</p>
         </div>
         {questionBlock.map((question, localIndex) => {
           const questionNumber = index + localIndex + 1;
@@ -74,10 +77,10 @@ export default props => {
             <div style={{ height: `${pageSize * 20}vh` }}></div>
           ) : (
             <FadeIn>
-              <div key={index + localIndex} className="test-question-container">
+              <div key={index + localIndex} className='test-question-container'>
                 {/* Question line */}
 
-                <div className="test-question-container__line">
+                <div className='test-question-container__line'>
                   <div
                     className={classnames("test-question-container__button", {
                       "test-question-container__button--checked": true
@@ -88,7 +91,7 @@ export default props => {
                   <span>{question}</span>
                 </div>
                 {/* Answer blocks */}
-                <div className="test-answer-container">
+                <div className='test-answer-container'>
                   {scaleDegrees.map((text, index) => (
                     <div
                       onClick={() => {
@@ -113,14 +116,14 @@ export default props => {
         })}
       </div>
 
-      <div className="test-question-buttons">
-        <button disabled={index === 0} onClick={pagePrev} className="home-start">
+      <div className='test-question-buttons'>
+        <button disabled={index === 0} onClick={pagePrev} className='home-start'>
           <span>Back</span>
         </button>
         <button
           disabled={!questionNumbers.every(n => questionsAnswered[n] !== undefined)}
           onClick={pageNext}
-          className="home-start"
+          className='home-start'
         >
           <span>Next</span>
         </button>

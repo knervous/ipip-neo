@@ -1,0 +1,19 @@
+.test-intro {
+    padding: 10pt 10pt;
+    & > span {
+      margin-left: 3pt;
+    }
+    button {
+      margin: 10pt;
+    }
+  }
+  
+  .test-intro-instructions {
+    .user-question-container {
+      margin: 5pt 0pt;
+    }
+    span.select-sex {
+      margin-right: 5pt;
+    }
+  }
+  

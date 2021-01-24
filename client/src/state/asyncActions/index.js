@@ -1,8 +1,9 @@
 import { changeLanguage } from './language';
-import { setAnswer } from './test';
+import { finishTest } from './test';
 export const getAsyncActions = (dispatch, getState) => {
   const actions = {
-    changeLanguage
+    changeLanguage,
+    finishTest
   };
 
   const context = { ...actions, dispatch, getState };

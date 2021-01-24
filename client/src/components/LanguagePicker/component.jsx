@@ -1,7 +1,8 @@
 import React from 'react';
 import { GlobalContext } from '../GlobalState/GlobalState';
-import './languagePicker.scss';
-export default () => {
+import './component.scss';
+
+export const LanguagePicker = () => {
   const languages = [
     {
       code: 'en',
