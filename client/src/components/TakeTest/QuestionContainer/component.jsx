@@ -95,15 +95,15 @@ export const QuestionContainer = props => {
                   {scaleDegrees.map((text, index) => (
                     <div
                       onClick={() => {
-                        setAnswer(questionNumber, index);
+                        setAnswer(questionNumber, index + 1);
                         if (localPageQuestions === "one") {
                           pageNext();
                         }
                       }}
                       className={classnames("scale-degree", {
-                        "scale-degree-selected": questionsAnswered[questionNumber] === index,
+                        "scale-degree-selected": questionsAnswered[questionNumber] === index + 1,
                         "scale-degree-inactive":
-                          questionsAnswered[questionNumber] !== undefined && questionsAnswered[questionNumber] !== index
+                          questionsAnswered[questionNumber] !== undefined && questionsAnswered[questionNumber] !== index + 1
                       })}
                     >
                       <p>{text}</p>

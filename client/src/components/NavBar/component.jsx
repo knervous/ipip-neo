@@ -29,25 +29,25 @@ export const NavBar = () => {
 
       <div className="header-test" onClick={() => navigate('/test')}>
         <span>{t('ui.header.takeTest')}</span>
-        <Icon size={35} icon={ic_assignment} />
+        <Icon size={30} icon={ic_assignment} />
       </div>
 
       <div className="header-about" onClick={() => navigate('/about')}>
         <span>{t('ui.header.about')}</span>
-        <Icon size={35} icon={ic_info_outline} />
+        <Icon size={30} icon={ic_info_outline} />
       </div>
 
       <div className="header-contact" onClick={() => navigate('/contact')}>
         <span>{t('ui.header.contact')}</span>
-        <Icon size={35} icon={ic_mail_outline} />
+        <Icon size={30} icon={ic_mail_outline} />
       </div>
 
       <div className="header-user">
-        <Icon size={45} icon={user} />
+        <Icon size={40} icon={user} />
       </div>
 
       <div onClick={() => setMenuVisible(true)} className="header-small-menu">
-        <Icon size={45} icon={ic_menu} />
+        <Icon size={40} icon={ic_menu} />
       </div>
 
       <Modal

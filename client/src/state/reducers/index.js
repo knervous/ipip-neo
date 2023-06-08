@@ -1,11 +1,13 @@
 import { testReducer } from "./test";
 import { uiReducer } from "./ui";
 
+const createFakeTestData = () => Array.from(new Array(300)).reduce((acc, val, ind) => ({...acc, [ind+1] : Math.ceil(Math.random() * 5)}), {});
+
 export const initialState = {
   test: {
     state: "notStarted",
     testType: "long",
-    questionsAnswered: {},
+    questionsAnswered: createFakeTestData(),
     finished: false,
     user: {
       nickname: "",

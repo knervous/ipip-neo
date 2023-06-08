@@ -6,6 +6,7 @@ import { GlobalContext } from "../../GlobalState/GlobalState";
 import { Modal, Button } from "antd";
 
 import "./component.scss";
+import {Finished} from "../Finished";
 
 export const TestContainer = () => (
   <GlobalContext.Consumer>
@@ -91,7 +92,7 @@ const TestContainerComponent = ({
   return (
     <div className='home-container'>
       {finished ? (
-        <div>hey you're finished</div>
+        <Finished goBack={() => setIndex(index - pageSize)}  />
       ) : (
         <>
           <Modal

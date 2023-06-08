@@ -1,8 +1,10 @@
 .header {
-    position: static;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
     display: flex;
     justify-content: space-evenly;
-    height: 9vh;
+    height: 8vh;
     color: #fbfbfb;
     text-align: center;
     background: rgb(238, 238, 238);
@@ -43,7 +45,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    font-size: 18pt;
+    font-size: 16pt;
     font-family: sans-serif;
   
     &:hover {
