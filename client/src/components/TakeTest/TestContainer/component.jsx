@@ -28,7 +28,7 @@ const TestContainerComponent = ({
     test
   }
 }) => {
-  const testLength = testType === "long" ? 10 : 120;
+  const testLength = testType === "long" ? 300 : 120;
   const [index, setIndex] = useState(0);
   const [showInProgress, setShowInProgress] = useState(false);
   const [pageSize, setPageSize] = useState(pageQuestions === "five" ? 5 : pageQuestions === "one" ? 1 : testLength);
@@ -70,7 +70,7 @@ const TestContainerComponent = ({
     } else {
       setIndex(index + pageSize);
     }
-    
+
   },[index, pageSize])
 
   const reset = () => {

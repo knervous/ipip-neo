@@ -67,7 +67,7 @@ export const QuestionContainer = props => {
         <div className='question-header'>
           <div onClick={() => setShowSettings(true)} className='test-settings-toggle'>
             <span>{t("ui.test.testSettings")}</span>
-            <Icon theme='filled' type='setting' />
+            {/* <Icon theme='filled' type='setting' /> */}
           </div>
           <p className='question-description'>{t("ui.test.describe")}</p>
         </div>

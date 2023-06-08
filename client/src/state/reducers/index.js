@@ -7,7 +7,7 @@ export const initialState = {
   test: {
     state: "notStarted",
     testType: "long",
-    questionsAnswered: createFakeTestData(),
+    questionsAnswered: [], //: createFakeTestData(),
     finished: false,
     user: {
       nickname: "",

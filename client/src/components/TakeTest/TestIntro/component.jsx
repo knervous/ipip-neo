@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Checkbox, Button, Modal, Input, Tooltip, Icon, Radio, InputNumber } from 'antd';
-
+import { Checkbox, Button, Modal, Input, Tooltip,  Radio, InputNumber } from 'antd';
+import Icon from 'react-icons-kit';
 import './component.scss';
 
 export const TestIntro = ({ actions: { setTestState, setTestUser } }) => {
@@ -48,10 +48,10 @@ export const TestIntro = ({ actions: { setTestState, setTestUser } }) => {
           onChange={e => setNickname(e.target.value)}
           value={nickname}
           placeholder={t('ui.intro.instructions.nickname')}
-          prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          // prefix={<Icon  >Placeholder user icon</Icon>} // TODO USER ICON
           suffix={
             <Tooltip title={t('ui.intro.instructions.nicknameDetails')}>
-              <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
+              {/* <Icon >Placeholder info icon</Icon> // TODO INFO ICON */}
             </Tooltip>
           }
         />
